@@ -89,7 +89,7 @@ function requestToFetchOptions(reqOpts: Options) {
   const options: f.RequestInit = {
     method: reqOpts.method || 'GET',
     ...(reqOpts.timeout && {timeout: reqOpts.timeout}),
-    ...(reqOpts.gzip && {compress: reqOpts.gzip}),
+    ...(reqOpts.gzip != null && {compress: reqOpts.gzip}),
   };
 
   if (typeof reqOpts.json === 'object') {
